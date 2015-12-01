@@ -1,0 +1,27 @@
+{
+  "name": "bid",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "bidPrice": {
+      "type": "number"
+    },
+    "bidDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "bidProvider": {
+      "type": "belongsTo",
+      "model": "classifindUser",
+      "foreignKey": "providerId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

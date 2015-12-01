@@ -1,0 +1,82 @@
+{
+  "name": "classifindUser",
+  "base": "User",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userPhone": {
+      "type": "string"
+    },
+    "userDescription": {
+      "type": "string"
+    },
+    "userFullName": {
+      "type": "string"
+    },
+    "userAddressStreet": {
+      "type": "string"
+    },
+    "userAddressCity": {
+      "type": "string"
+    },
+    "userAddressCountry": {
+      "type": "string"
+    },
+    "userAddressPostal": {
+      "type": "string"
+    },
+    "profilePic": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "requestedJobs": {
+      "type": "hasMany",
+      "model": "job",
+      "foreignKey": "requestorId"
+    },
+    "providedJobs": {
+      "type": "hasMany",
+      "model": "job",
+      "foreignKey": "providerId"
+    },
+    "submittedBids": {
+      "type": "hasMany",
+      "model": "bid",
+      "foreignKey": "providerId"
+    },
+    "userSkills": {
+      "type": "hasMany",
+      "model": "userSkill",
+      "foreignKey": "classifindUserId"
+    },
+    "userBadges": {
+      "type": "hasMany",
+      "model": "userBadge",
+      "foreignKey": "classifindUserId"
+    },
+    "submittedReviews": {
+      "type": "hasMany",
+      "model": "review",
+      "foreignKey": "submittingUserId"
+    },
+    "receivedReviews": {
+      "type": "hasMany",
+      "model": "review",
+      "foreignKey": "receivingUserId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

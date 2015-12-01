@@ -1,0 +1,27 @@
+{
+  "name": "userSkill",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "skillName": {
+      "type": "string"
+    },
+    "skillLevel": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "classifindUser": {
+      "type": "belongsTo",
+      "model": "classifindUser",
+      "foreignKey": "classifindUserId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,43 @@
+{
+  "name": "review",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "reviewComments": {
+      "type": "string"
+    },
+    "reviewRating": {
+      "type": "number"
+    },
+    "reviewType": {
+      "type": "string"
+    },
+    "reviewDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "jobReview": {
+      "type": "belongsTo",
+      "model": "job",
+      "foreignKey": "reviewedJobId"
+    },
+    "submittedReviews": {
+      "type": "belongsTo",
+      "model": "classifindUser",
+      "foreignKey": "submittingUserId"
+    },
+    "receivedReviews": {
+      "type": "belongsTo",
+      "model": "classifindUser",
+      "foreignKey": "receivingUserId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

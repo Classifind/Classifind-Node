@@ -1,0 +1,23 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysqlAzure": {
+    "host": "us-cdbr-azure-central-a.cloudapp.net",
+    "port": 3306,
+    "database": "classifind",
+    "password": "519c0f3d",
+    "name": "mysqlAzure",
+    "connector": "mysql",
+    "user": "bc7f7c8329a6c2"
+  },
+  "mysqlLocal": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "database": "classifind",
+    "name": "mysqlLocal",
+    "user": "root",
+    "connector": "mysql"
+  }
+}

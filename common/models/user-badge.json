@@ -1,0 +1,21 @@
+{
+  "name": "userBadge",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "badgeName": {
+      "type": "string"
+    },
+    "badgeImage": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

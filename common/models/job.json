@@ -1,0 +1,63 @@
+{
+  "name": "job",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "jobTitle": {
+      "type": "string"
+    },
+    "jobDescription": {
+      "type": "string"
+    },
+    "jobCategory": {
+      "type": "string"
+    },
+    "jobPostingDate": {
+      "type": "date"
+    },
+    "jobStatus": {
+      "type": "string"
+    },
+    "jobAddressStreet": {
+      "type": "string"
+    },
+    "jobAddressCity": {
+      "type": "string"
+    },
+    "jobAddressCountry": {
+      "type": "string"
+    },
+    "jobAddressPostal": {
+      "type": "string"
+    },
+    "acceptedBidId": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "submittedBids": {
+      "type": "hasMany",
+      "model": "bid",
+      "foreignKey": "jobId"
+    },
+    "jobRequestor": {
+      "type": "belongsTo",
+      "model": "classifindUser",
+      "foreignKey": "requestorId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
